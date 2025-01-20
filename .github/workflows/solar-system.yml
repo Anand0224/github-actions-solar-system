@@ -42,8 +42,9 @@ jobs:
           with:
             path: ~/.npm
             key: '${{ runner.os }}-node-modules-${{ hashFiles(''package-lock.json'') }}'
-        - name: display hash
-          run: ${{ hashFiles('package-lock.json') }}
+            
+        #- name: display hash
+        #  run: ${{ hashFiles('package-lock.json') }}
     
     code-coverage:
       runs-on: ubuntu-latest
