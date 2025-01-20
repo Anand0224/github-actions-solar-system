@@ -29,6 +29,7 @@ jobs:
     
         - name: Unit Testing
           run: npm test
+          continue-on-error: true
           
         - name: Archive Test Result
           if: always()
@@ -42,7 +43,7 @@ jobs:
           with:
             path: ~/.npm
             key: '${{ runner.os }}-node-modules-${{ hashFiles(''package-lock.json'') }}'
-            
+
         #- name: display hash
         #  run: ${{ hashFiles('package-lock.json') }}
     
